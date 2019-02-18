@@ -1,4 +1,11 @@
-FROM tomcat:8.5-alpine
-ADD /home/jenkins/tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
-RUN chmod -R 777
+FROM tomcat
+
+MAINTAINER Harish
+
+RUN apt-get update && apt-get -y upgrade
+
+WORKDIR /usr/local/tomcat
+
+COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
+
 EXPOSE 8080
