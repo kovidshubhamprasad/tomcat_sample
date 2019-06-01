@@ -1,6 +1,6 @@
 FROM tomcat
 
-MAINTAINER Harish
+MAINTAINER Kovid
 
 RUN apt-get update && apt-get -y upgrade
 
